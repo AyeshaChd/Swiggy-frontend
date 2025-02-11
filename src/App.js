@@ -7,8 +7,8 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
-import { lazy, useState, useEffect } from "react";
-// import Grocery from "./components/Grocery";
+import { lazy, useState, useEffect, Suspense } from "react";
+// import Grocery from "./components/Grocery";--lazy loading
 const Grocery = lazy(() => import("./components/Grocery"));
 import UserContext from "./utils/UserContext";
 import appStore from "./utils/appStore";
@@ -68,7 +68,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/Grocery",
-        element: <Grocery />,
+        element: (
+          <Suspense fallback={<h1>loading</h1>}>
+            <Grocery />
+          </Suspense>
+        ),
       },
       {
         path: "/Cart",
