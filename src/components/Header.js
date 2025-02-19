@@ -1,12 +1,12 @@
-import web_logo from "../utils/images/web_logo.png";
+import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useContext } from "react";
-
 import { Link } from "react-router";
+
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("login");
   const onlineStatus = useOnlineStatus();
@@ -14,13 +14,14 @@ const Header = () => {
   const { loggedInUser } = useContext(UserContext);
   //subscribing to the store using a selector
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
+
   return (
     <div className="header bg-pink-700 text-white  flex justify-between  mx-2 px-5 border-[1px] border-solid border-black">
-      <div className="logo-container">
-        <img className="logo w-[100px]" src={web_logo} alt=" an img" />
+      <div className="logo-container flex  items-center">
+        <img className=" w-[100px] h-[90px] " src={LOGO_URL} alt=" an img" />
+        <h1 className="text-white font-bold text-2xl ">SwiftBite</h1>
       </div>
-      <div className="nav-items ">
+      <div className="nav-items text-white">
         <ul className=" flex mt-8">
           <li className="px-6">Online Status :{onlineStatus ? "✅" : "🔴"}</li>
           <li className="px-6 ">

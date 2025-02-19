@@ -6,6 +6,19 @@ import "@testing-library/jest-dom";
  parts has been found ,means they exist .*/
 
 describe("Contact us page test case", () => {
+  beforeAll(() => {
+    console.log("Before All");
+  });
+  beforeEach(() => {
+    console.log("Before each");
+  });
+  afterAll(() => {
+    console.log("after all");
+  });
+  afterEach(() => {
+    console.log("after each");
+  });
+
   it("should load contact us component", () => {
     // Before testing UI of the component ,we must have to render it on js-dom through render method.
     render(<Contact />);

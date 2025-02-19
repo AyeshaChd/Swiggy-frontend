@@ -4,11 +4,12 @@
 import { IMAGE_URL } from "../utils/constants";
 const RestaurantCard = (props) => {
   const { resData } = props;
+
   const { name, cuisines, avgRating, costForTwo, cloudinaryImageId } =
     resData?.info;
   const { deliveryTime } = resData?.info.sla;
   return (
-    <div className="restaurant-card  rounded-[15px]">
+    <div data-testid="resCard" className="restaurant-card  rounded-[15px]">
       <img
         className="res-logo  rounded-t-[15px] rounded-b-[5px]  w-[300px] h-[250px]"
         src={IMAGE_URL + cloudinaryImageId}

@@ -20,13 +20,13 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 // AppLayout
 const AppLayout = () => {
   // how to modify  react context info in our app with the new info
-  const [userName, setUserName] = useState();
+  const [userName, setUserName] = useState("Ayesha");
   //authentication
 
   useEffect(() => {
     //make an api call and send username and password and get data .
     const data = {
-      name: "Ayesha Chaudhary",
+      name: "Ayesha ch",
     };
     setUserName(data.name);
   }, []);

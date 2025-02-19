@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
-import { useState } from "react";
+
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -27,7 +27,6 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.5743545&lng=88.3628734&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    // console.log(json);
 
     setListOfRestaurants(
       // optional chaining
@@ -56,6 +55,7 @@ const Body = () => {
             type="text"
             className="search border-[1.5px]   rounded-[5px] border-black py-[3px] mr-1"
             value={searchText}
+            data-testid="searchInput"
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
@@ -94,7 +94,6 @@ const Body = () => {
             className="border border-black rounded-[5px] p-1"
             value={loggedInUser}
             onChange={(e) => {
-              console.log("hi:", e.target.value);
               setUserName(e.target.value);
             }}
           />

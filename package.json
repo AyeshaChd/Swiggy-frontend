@@ -5,7 +5,8 @@
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
-    "test": "jest"
+    "test": "jest",
+    "watch-test": "jest --watch"
   },
   "keywords": [
     "react"
@@ -21,6 +22,7 @@
     "babel-jest": "^29.7.0",
     "buffer": "^6.0.3",
     "jest": "^29.7.0",
+    "jest-fixed-jsdom": "^0.0.9",
     "jest-transform-stub": "^2.0.0",
     "parcel": "^2.13.2",
     "postcss": "^8.4.49",
@@ -31,11 +33,12 @@
     "@babel/preset-react": "^7.26.3",
     "@reduxjs/toolkit": "^2.5.1",
     "jest-environment-jsdom": "^29.7.0",
+    "jest-utils": "^0.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
-    "react-router": "^7.1.1",
-    "react-router-dom": "^7.1.1"
+    "react-router": "^7.1.5",
+    "text-encoding": "^0.7.0"
   },
   "browerslist": [
     "last 2 versions"

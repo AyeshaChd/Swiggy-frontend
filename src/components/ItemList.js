@@ -1,4 +1,3 @@
-import { addItem } from "../utils/cartSlice";
 import { IMAGE_URL } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
@@ -12,6 +11,7 @@ const ItemList = ({ items }) => {
     <div>
       {items.map((item) => (
         <div
+          data-testid="foodItems"
           key={item.card.info.id}
           className=" border-gray-300 border-b-[1.5px] m-2 p-2 text-left   mt-3 flex justify-between  "
         >
